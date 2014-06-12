@@ -214,6 +214,9 @@ Inspired by Hakim's demo: https://github.com/hakimel/avgrund/
 
 ## Changelog
 
+### Update (Jun 13, 2014)
+Properly display popin if content of body does not fit into window
+
 ### Update (Apr 27, 2014)
 Added after complete event
 
