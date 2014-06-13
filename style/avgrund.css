@@ -1,5 +1,4 @@
 html, body {
-	height: 100%;
 	overflow: auto;
 }
 
@@ -26,8 +25,8 @@ html, body {
 .avgrund-overlay {
 	background: #000;
 	width: 100%;
-	position: relative;
-	top: -1500px;
+	position: absolute;
+	top: 0;
 	left: 0;
 	z-index: 101;
 	visibility: hidden;
@@ -76,7 +75,6 @@ body.avgrund-active {
 	visibility: visible;
 	opacity: .5;
 	filter: alpha(opacity=50);
-	height: 20000px;
 }
 
 .avgrund-popin.stack {
