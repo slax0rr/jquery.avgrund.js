@@ -51,6 +51,7 @@
 
             if ($('.avgrund-overlay').length === 0) {
                 body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
+                $(".avgrund-overlay").height($("body").height());
             }
 
             if (options.onBlurContainer !== '') {
