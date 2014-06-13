@@ -125,6 +125,7 @@
             function deactivate () {
                 body.unbind('keyup', onDocumentKeyup)
                     .unbind('click', onDocumentClick)
+                    .height("auto")
                     .removeClass('avgrund-active');
 
                 setTimeout(function() {
