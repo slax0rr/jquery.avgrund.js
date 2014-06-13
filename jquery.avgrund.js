@@ -128,6 +128,8 @@
                     .height("auto")
                     .removeClass('avgrund-active');
 
+                $(window).off("resize");
+
                 setTimeout(function() {
                     $('.avgrund-popin').remove();
                 }, 500);
