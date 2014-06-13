@@ -51,7 +51,6 @@
 
             if ($('.avgrund-overlay').length === 0) {
                 body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
-                $(".avgrund-overlay").height($("body").height());
             }
 
             if (options.onBlurContainer !== '') {
@@ -78,10 +77,18 @@
                 }
             }
 
+            function onResize(e) {
+                var h = $(window).height();
+                body.height(h);
+                $(".avgrund-overlay").height(h);
+            }
+
             function activate () {
                 if (typeof options.onLoad === 'function') {
                     options.onLoad(self);
                 }
+
+                onResize();
 
                 setTimeout(function() {
                     body.addClass('avgrund-active');
@@ -108,6 +115,7 @@
 
                 body.bind('keyup', onDocumentKeyup)
                     .bind('click', onDocumentClick);
+                $(window).resize(function() { onResize(); });
 
                 if (typeof options.afterComplete === 'function') {
                     options.afterComplete(self);
@@ -117,7 +125,10 @@
             function deactivate () {
                 body.unbind('keyup', onDocumentKeyup)
                     .unbind('click', onDocumentClick)
+                    .height("auto")
                     .removeClass('avgrund-active');
+
+                $(window).off("resize");
 
                 setTimeout(function() {
                     $('.avgrund-popin').remove();
