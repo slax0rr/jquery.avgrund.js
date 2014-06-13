@@ -100,9 +100,7 @@
 
                 $('.avgrund-popin').css({
                     'width': maxWidth + 'px',
-                    'height': maxHeight + 'px',
-                    'margin-left': '-' + (maxWidth / 2 + 10) + 'px',
-                    'margin-top': '-' + (maxHeight / 2 + 10) + 'px'
+                    'height': maxHeight + 'px'
                 });
 
                 if (options.showClose) {
@@ -113,13 +111,27 @@
                     $('.avgrund-popin').addClass('stack');
                 }
 
+                positionPopin();
+
                 body.bind('keyup', onDocumentKeyup)
                     .bind('click', onDocumentClick);
-                $(window).resize(function() { onResize(); });
+                $(window).resize(function() { onResize(); positionPopin(); });
 
                 if (typeof options.afterComplete === 'function') {
                     options.afterComplete(self);
                 }
+            }
+
+            function positionPopin() {
+                var popin =  $(".avgrund-popin"),
+                    h = popin.height(),
+                    w = popin.width();
+
+                console.log(h, w);
+
+                popin.css("position", "absolute")
+                    .css("top", $(window).height() / 2 - h / 2)
+                    .css("left", $(window).width() / 2 - w / 2);
             }
 
             function deactivate () {
