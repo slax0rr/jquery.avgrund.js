@@ -214,15 +214,13 @@ Inspired by Hakim's demo: https://github.com/hakimel/avgrund/
 
 ## Changelog
 
-### Update (Apr 27, 2014)
-Added after complete event
+### Update (Jun 13, 2014)
+Properly display popin if content of body does not fit into window
 
 Position popin on center
 
 ## Version 0.1.0.0
 
-### Update (Jun 13, 2014)
-Properly display popin if content of body does not fit into window
 
 ### Update (Apr 27, 2014)
 Added after complete event
