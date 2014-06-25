@@ -20,22 +20,23 @@
 }(function ($) {
     $.fn.avgrund = function (options) {
         var defaults = {
-            width: 380, // max = 640
-            height: 280, // max = 350
-            showClose: false,
-            showCloseText: '',
-            closeByEscape: true,
-            closeByDocument: true,
-            holderClass: '',
-            overlayClass: '',
-            enableStackAnimation: false,
-            onBlurContainer: '',
-            openOnEvent: true,
-            setEvent: 'click',
-            onLoad: false,
-            onUnload: false,
-            template: '<p>This is test popin content!</p>',
-            afterComplete: false
+            width                   :   380, // max = 640
+            height                  :   280, // max = 350
+            showClose               :   false,
+            showCloseText           :   '',
+            closeByEscape           :   true,
+            closeByDocument         :   true,
+            holderClass             :   '',
+            overlayClass            :   '',
+            enableStackAnimation    :   false,
+            onBlurContainer         :   '',
+            openOnEvent             :   true,
+            setEvent                :   'click',
+            onLoad                  :   false,
+            onUnload                :   false,
+            template                :   '<p>This is test popin content!</p>',
+            title                   :   false,
+            afterComplete           :   false
         };
 
         options = $.extend(defaults, options);
@@ -46,6 +47,7 @@
                 maxWidth = options.width > 640 ? 640 : options.width,
                 maxHeight = options.height > 350 ? 350 : options.height,
                 template = typeof options.template === 'function' ? options.template(self) : options.template;
+                template = '<div class="avgrund-content">' + template + '</div>';
 
             body.addClass('avgrund-ready');
 
@@ -105,6 +107,10 @@
 
                 if (options.showClose) {
                     $('.avgrund-popin').append('<a href="#" class="avgrund-close">' + options.showCloseText + '</a>');
+                }
+
+                if (options.title) {
+                    $('.avgrund-popin').append('<div class="avgrund-title">' + options.title + '</div>');
                 }
 
                 if (options.enableStackAnimation) {
