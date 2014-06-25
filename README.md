@@ -47,6 +47,7 @@ $('element').avgrund({
 	onLoad: function (elem) { ... }, // set custom call before popin is inited..
 	onUnload: function (elem) { ... }, // ..and after it was closed
 	afterComplete: function (elem) { ... }, // fire after the popin has been loaded and displayed
+	title: false, // if set to a string, the title will be displayed in the popin
 	template: 'Your string content goes here..' // or function (elem) { ... }, or selector $('.content')
 });
 ```
@@ -205,6 +206,16 @@ and use it in ``template`` of popin:
 ```javascript
 $('element').avgrund({
 	template: $('.content')
+});
+```
+
+### title - string
+
+If a string is supplied a title element will be added to the overlay
+
+```javascript
+$('element').avgrund({
+	title: 'This is a title'
 });
 ```
 
