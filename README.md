@@ -209,7 +209,7 @@ $('element').avgrund({
 });
 ```
 
-### title - string
+##### title - string
 
 If a string is supplied a title element will be added to the overlay
 
