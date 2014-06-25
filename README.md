@@ -2,7 +2,7 @@
 
 Fork of [voronianski/jquery.avgrund.js](https://github.com/voronianski/jquery.avgrund.js)
 
-Current version: 0.1.0.0
+Current version: 0.1.0.1
 
 Avgrund is a jQuery plugin for your modal boxes and popups. It uses new concept showing depth between popup and page.
 
@@ -213,6 +213,9 @@ $('element').avgrund({
 Inspired by Hakim's demo: https://github.com/hakimel/avgrund/
 
 ## Changelog
+
+### Update (Jun 25, 2014)
+Add title option
 
 ### Update (Jun 13, 2014)
 Properly display popin if content of body does not fit into window
